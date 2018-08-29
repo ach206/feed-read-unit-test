@@ -32,10 +32,11 @@ $(function() {
          * and that the URL is not empty.
          */
          it('feed has a valid url', function(){
-           // expect(allFeeds.url).not.toBe(null);
            allFeeds.forEach(function(e, i){
-             expect(allFeeds[i].url).toBeDefined()
-           });
+             expect(allFeeds[i].url).toBeDefined();
+             expect(allFeeds[i].url).not.toBe(undefined);
+             expect(allFeeds[i].url).not.toBe("");
+           })
 
          })
 
