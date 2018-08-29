@@ -33,7 +33,9 @@ $(function() {
          */
          it('feed has a valid url', function(){
            // expect(allFeeds.url).not.toBe(null);
-           expect(allFeeds[0].url).toBeDefined();
+           allFeeds.forEach(function(e, i){
+             expect(allFeeds[i].url).toBeDefined()
+           });
 
          })
 
