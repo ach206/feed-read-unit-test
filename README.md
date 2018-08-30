@@ -1,10 +1,7 @@
 RSS Feed Unit Test
 ===============================
 
-## Live Test
-[See the unit test](https://ach206.github.io/feed-read-unit-test/)
-
-## How to Play
+## How to get this repo
 1) Download ZIP file or clone the repo:
 
     ```git clone https://github.com/ach206/feed-read-unit-test.git```
