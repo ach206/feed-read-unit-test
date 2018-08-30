@@ -1,5 +1,6 @@
 RSS Feed Unit Test
 ===============================
+<img src="images/screenshot.png">
 
 ## How to get this repo
 1) Download ZIP file or clone the repo:
