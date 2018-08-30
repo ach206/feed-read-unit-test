@@ -91,13 +91,14 @@ describe("Initial Entries", function() {
 
 describe("News Selection Feed", function(){
     
-    let load1;
-     //async loadFeed
+    let load1, load2;
+     //pulling inner HTML from index 0 and 1 of RSS Feeds
     beforeEach(function(done) {
         loadFeed(0, function() {
             load1 = $('.feed').html();
         });
         loadFeed(1, function() {
+            load2 = $('.feed').html();
           done();
         })
     })
@@ -105,7 +106,6 @@ describe("News Selection Feed", function(){
          * by the loadFeed function the content will change.
          */
     it('should load content of selected RSS feed', function(done){
-        let load2 = $('.feed').html();
         $('.feed').trigger('click'); 
         expect(load2).not.toEqual(load1);
         done();
