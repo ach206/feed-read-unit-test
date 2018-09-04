@@ -95,9 +95,9 @@ describe("News Selection Feed", function(){
     let load1, load2;
      //pulling inner HTML from index 0 and 1 of RSS Feeds
     beforeEach(function(done) {
-      //load the 1st feed
-        loadFeed(0, function() {
-            load1 = $('.feed').html();
+    //load the 1st feed
+      loadFeed(0, function() {
+          load1 = $('.feed').html();
             //load 2nd feed
             loadFeed(1, function() {
                 load2 = $('.feed').html();
