@@ -64,49 +64,52 @@ describe("The menu", function(){
           * from hidden to visible when the menu icon is clicked.
           */
       it('toggles visibility on click', function() {
-        $('.menu-icon-link').trigger('click'); 
+        $('.menu-icon-link').trigger('click');
         expect(body.hasClass('menu-hidden')).toBe(false);
         $('.menu-icon-link').trigger('click');
-        expect(body.hasClass('menu-hidden'));
+        expect(body.hasClass('menu-hidden')).toBe(true);
     });
 
   }); //closes The menu
 
 describe("Initial Entries", function() {
-         //async 
+         //async
     beforeEach(function(done) {
-        setTimeout(function() {
-          done();
-        }, 1);
+      loadFeed(0, function() {
+        done();
+      });
+
     });
 
         /* a test that ensures there is at least
          * a single .entry element within the .feed container.
        */
     it('should output entry from loadFeed', function(done){
-        expect($('.feed').children.length).toBeGreaterThan(0);
+        expect($('.feed .entry').length).toBeGreaterThan(0);
         done();
     });
 }) // close initial entries
 
 describe("News Selection Feed", function(){
-    
+
     let load1, load2;
      //pulling inner HTML from index 0 and 1 of RSS Feeds
     beforeEach(function(done) {
+      //load the 1st feed
         loadFeed(0, function() {
             load1 = $('.feed').html();
-        });
-        loadFeed(1, function() {
-            load2 = $('.feed').html();
-          done();
+            //load 2nd feed
+            loadFeed(1, function() {
+                load2 = $('.feed').html();
+        done();
         })
-    })
+      })
+    });
         /* a test that ensures when a new feed is loaded
          * by the loadFeed function the content will change.
          */
     it('should load content of selected RSS feed', function(done){
-        $('.feed').trigger('click'); 
+        $('.feed').trigger('click');
         expect(load2).not.toEqual(load1);
         done();
     })
